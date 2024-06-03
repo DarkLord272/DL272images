@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Resize
+{% endblock %}
+
+{% block ccss %}
+{% endblock %}
+
+{% block menu %}
+<li><a href="/" class="nav-link px-2">Главная</a></li>
+<li><a href="resize/" class="nav-link px-2 link-secondary">Resize</a></li>
+<li><a href="#" class="nav-link px-2">Rotate</a></li>
+<li><a href="#" class="nav-link px-2">Crop</a></li>
+<li><a href="#" class="nav-link px-2">Optimize</a></li>
+<li><a href="#" class="nav-link px-2">Split</a></li>
+<li><a href="#" class="nav-link px-2">Effects</a></li>
+<li><a href="#" class="nav-link px-2">Add text</a></li>
+<li><a href="#" class="nav-link px-2">APNG</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image">
+        <p>Left: <input type="text" name="left"></p>
+        <p>Right: <input type="text" name="right"></p>
+        <p>Top: <input type="text" name="top"></p>
+        <p>Bottom: <input type="text" name="bottom"></p>
+        <p>WNsize: <input type="text" name="wnsize"></p>
+        <p>HNsize: <input type="text" name="hnsize"></p>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if input_image_base64 %}
+    <h2>Исходное изображение:</h2>
+    <img src="data:image/jpeg;base64,{{ input_image_base64 }}" alt="Исходное изображение">
+    {% endif %}
+
+    {% if output_image_base64 %}
+    <h2>Обработанное изображение:</h2>
+    <img src="data:image/jpeg;base64,{{ output_image_base64 }}" alt="Обработанное изображение">
+    {% endif %}
+</div>
+
+
+{% endblock %}

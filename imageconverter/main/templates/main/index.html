@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block ccss %}
+.content-container {
+    background-color: white;
+    padding: 2rem;
+    width: 80%;
+    margin: 2rem auto;
+    }
+h2 {text-align: center;}
+
+{% endblock %}
+
+{% block menu %}
+<li><a href="/" class="nav-link px-2 link-secondary">Главная</a></li>
+<li><a href="resize/" class="nav-link px-2">Resize</a></li>
+<li><a href="#" class="nav-link px-2">Rotate</a></li>
+<li><a href="#" class="nav-link px-2">Crop</a></li>
+<li><a href="#" class="nav-link px-2">Optimize</a></li>
+<li><a href="#" class="nav-link px-2">Split</a></li>
+<li><a href="#" class="nav-link px-2">Effects</a></li>
+<li><a href="#" class="nav-link px-2">Add text</a></li>
+<li><a href="#" class="nav-link px-2">APNG</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+<h2>Оффлайн конвертер изображений</h2>
+</div>
+{% endblock %}
