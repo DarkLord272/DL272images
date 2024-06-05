@@ -77,7 +77,6 @@ class ResizeApi(APIView):
             output_image_base64 = base64.b64encode(output_buffer.getvalue()).decode()
 
             return Response({
-                'input_image': input_image_base64,
                 'output_image': output_image_base64
             })
         else:
